@@ -60,7 +60,7 @@ Ergänzen Sie den folgenden Logikplan, so dass die Werte 0..9 ausgegeben werden.
 
 ## Aufgabe 4: Schaltnetze
 
-Gegeben ist folgende Schaltung:
+Gegeben ist folgende Schaltung. Der graue Punkt for dem Operator soll NOT bedeuten! Also invertiert den Eingabewert:
 
 ![Schaltnetz](./img/schaltnetz.png)
 
