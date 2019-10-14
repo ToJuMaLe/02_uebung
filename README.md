@@ -16,8 +16,26 @@ Zeigen sie mit Hilfe einer Wahrheitstabelle, das die
 
 ```
 ¬(a∧b) =¬a∨¬b 
+```
+
+| a |  b | a ∧ b | ¬(a∧b)|¬a | ¬b| ¬a∨¬b|
+|---|----|-------|-------|---|---|------|
+| 1 | 0  | 0     | 1     | 0 | 1 | 1    |
+| 1 | 1  | 1     | 0     | 0 | 0 | 0    |
+| 0 | 0  | 0     | 1     | 1 | 1 | 1    |
+| 0 | 1  | 0     | 1     | 1 | 0 | 1    |
+
+```
 ¬(a∨b) =¬a∧¬b
 ```
+
+
+| a |  b | a v b | ¬(avb)|¬a | ¬b| ¬a∧¬b|
+|---|----|-------|-------|---|---|------|
+| 1 | 0  | 1     | 0     | 0 | 1 | 0    |
+| 1 | 1  | 1     | 0     | 0 | 0 | 0    |
+| 0 | 0  | 0     | 1     | 1 | 1 | 1    |
+| 0 | 1  | 1     | 0     | 1 | 0 | 0    |
 
 und die
 
@@ -25,8 +43,24 @@ und die
 
 ```
 a∨¬a∧b = a∨b 
+```
+
+| a |  b | ¬a∧b |a∨¬a∧b)|a∨b |
+|---|----|------|-------|----|
+| 1 | 0  | 0    | 1     | 1  |
+| 1 | 1  | 0    | 1     | 1  |
+| 0 | 0  | 0    | 0     | 0  |
+| 0 | 1  | 1    | 1     | 1  |
+
+```
 a∧(¬a∨b) = a∧b 
 ```
+| a |  b | ¬avb |a∧(¬avb)|a∧b |
+|---|----|------|-------|----|
+| 1 | 0  | 0    | 0     | 0  |
+| 1 | 1  | 1    | 1     | 1  |
+| 0 | 0  | 1    | 0     | 0  |
+| 0 | 1  | 1    | 0     | 0  |
 
 gelten.
 
@@ -40,13 +74,20 @@ Es gilt also: Der Ausgang y meldet dann eine 1, wenn mindestens zwei der Eingän
 
 Stellen Sie die Wahrheitstabelle auf.
 
+![Wertetabelle](./img/werte.png)
+
 ### 2.2 Logische Gleichung
 
 Stellen Sie die logische Gleichung auf und vereinfachen diese w, wenn nötig.
 
+
+![Wertetabelle](./img/logic.png)
+
 ### 2.3 Schaltnetzplan
 
 Entwerfen Sie einen Schaltnetzplan.
+
+![Wertetabelle](./img/schaltung.png)
 
 ## Aufgabe 3: Decoder/ Encoder
 
@@ -55,17 +96,34 @@ Mit 4 Eingangssignale (a,b,c,d) lassen sich die Werte 0..9 abbilden.
 Ergänzen Sie den folgenden Logikplan, so dass die Werte 0..9 ausgegeben werden.
 
 
-![2-aus-3](./img/decoder.png)
+![2-aus-3](./img/decoder_lsg.png)
 
 
 ## Aufgabe 4: Schaltnetze
 
-Gegeben ist folgende Schaltung:
+Gegeben ist folgende Schaltung. Der graue Punkt for dem Operator soll NOT bedeuten! Also invertiert den Eingabewert:
 
 ![Schaltnetz](./img/schaltnetz.png)
 
 - Stellen Sie die Wahrheitswertetabelle auf. 
+
+| e1 |  e2 | e3   | e1∧e2∧¬e3 |¬e1Ve2Ve3 |¬e1∧e2∧e3 | a|
+|----|-----|------|----|----|-----|----|
+| 0  | 0   | 0    | 0  |1  |0  |1  |
+| 0  | 0   | 1    | 0  |1  |0  |1  |
+| 0  | 1   | 0    | 0  |1  |0  |1  |
+| 0  | 1   | 1    | 0  |1  |1  |1  |
+| 1  | 0   | 0    | 0  |0  |0  |0  |
+| 1  | 0   | 1    | 0  |1  |0  |1  |
+| 1  | 1   | 0    | 1  |1  |0  |1  |
+| 1  | 1   | 1    | 0  |1  |0  |1  |
+
 - Geben Sie eine Logikgleichung an. Verwenden Sie die disjunktive Normalform.
+
+```
+f= 
+```
+
 - Zeichnen Sie das Schaltnetz neu, ersetzen Sie dabei die AND-Gatter durch OR- bzw. NOR-Gatter. - Verändern Sie die ursprüngliche Schaltung so, dass sie nur noch aus AND- bzw. NAND-Gattern besteht.
 
 ## Aufgabe 5: Halbaddierer in Java
